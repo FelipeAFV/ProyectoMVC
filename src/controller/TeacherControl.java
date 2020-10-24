@@ -78,7 +78,10 @@ public class TeacherControl implements ActionListener {
                 JOptionPane.showMessageDialog(null, "No se ha encontrado el equipo");
             }
         } else if (e.getSource().equals(teacherView.btnIdSala)) {
-
+            int id = Integer.parseInt(teacherView.txtIdSala.getText());
+            ArrayList<EquipmentBBDD> equipments = teacherData.searchByClassroom(id);
+            DefaultTableModel def = createDataDisplay(equipments);
+            teacherView.jTable2.setModel(def);
         }
 
     }
