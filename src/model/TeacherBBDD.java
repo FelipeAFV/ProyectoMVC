@@ -33,9 +33,7 @@ public class TeacherBBDD implements TeacherDAO {
             String query = "SELECT eqp_id, eqp_name, status, brand, year"
                     + " FROM equipment WHERE eqp_id = ?";
             connection = conn.getConexion();
-            if (connection != null) {
-                JOptionPane.showMessageDialog(null, "Conexion exitosa");
-            }
+
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, id);
 
