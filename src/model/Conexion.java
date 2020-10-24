@@ -4,13 +4,14 @@ package model;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import javax.swing.JOptionPane;
 
 public class Conexion {
     
-    private final String base = "orcl";
-    private final String user = "instituto_trabajo";
-    private final String password = "progra";
-    private final String url = "jdbc:oracle:thin:@40.71.170.91:1521:"+base;
+    private final String base = "BBDDEJ";
+    private final String user = "trabajo_pa";
+    private final String password = "190298";
+    private final String url = "jdbc:oracle:thin:@localhost:1521:"+base;
     protected Connection con = null;
     
     public Connection getConexion() {
@@ -18,8 +19,8 @@ public class Conexion {
         try {
             Class.forName("oracle.jdbc.driver.OracleDriver");
             con = DriverManager.getConnection(this.url,this.user,this.password);
-        } catch (SQLException | ClassNotFoundException ex) {
-            System.out.println("No se ha logrado la conexión a la BBDD");
+        } catch (Exception ex) {
+            JOptionPane.showMessageDialog(null, "No se ha logrado la conexión a la BBDD");
         }
         return con;
     }

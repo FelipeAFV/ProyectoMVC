@@ -15,8 +15,8 @@ import view.TeacherView;
  */
 public interface TeacherDAO {
     
-    public Equipment searchById(int id);
-    public ArrayList<Equipment> searchByClassroom(int classroomId);
+    public EquipmentBBDD searchById(int id);
+    public ArrayList<EquipmentBBDD> searchByClassroom(int classroomId);
     
 
     

@@ -5,6 +5,10 @@
  */
 package app;
 
+import controller.TeacherControl;
+import model.TeacherBBDD;
+import view.TeacherView;
+
 /**
  *
  * @author f_fig
@@ -12,7 +16,10 @@ package app;
 public class Main {
 
     public static void main(String[] args) {
-
+        TeacherView tv = new TeacherView();
+        TeacherBBDD tb = new TeacherBBDD();
+        TeacherControl teachC = new TeacherControl(tv, tb);
+        teachC.begin();
 
       
     }
