@@ -5,10 +5,14 @@
  */
 package model;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import jdk.nashorn.internal.runtime.arrays.ArrayData;
 
@@ -18,58 +22,79 @@ import jdk.nashorn.internal.runtime.arrays.ArrayData;
  */
 public class TeacherBBDD implements TeacherDAO {
 
-    Connection conn;
+    private Conexion conn = new Conexion();
+    private Connection connection;
 
     @Override
-    public Equipment searchById(int id) {
+    public EquipmentBBDD searchById(int id) {
+        
         try {
 
             String query = "SELECT eqp_id, eqp_name, status, brand, year"
-                    + " FROM EQUIPMENT WHERE eqp_id = ?";
-            PreparedStatement ps = conn.connect().prepareStatement(query);
+                    + " FROM equipment WHERE eqp_id = ?";
+            connection = conn.getConexion();
+
+            PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, id);
 
             ResultSet rs = ps.executeQuery();
 
-            Equipment eqp = null;
+            EquipmentBBDD eqp = null;
             if (rs.next()) {
+                
                 int eqpId = rs.getInt("EQP_ID");
                 String eqpName = rs.getString("EQP_NAME");
                 String status = rs.getString("STATUS");
                 String brand = rs.getString("BRAND");
                 String year = rs.getString("YEAR");
-                eqp = new Equipment()
+                eqp = new EquipmentBBDD();
+                eqp.setEqp_id(eqpId);
+                eqp.setEqp_name(eqpName);
+                eqp.setStatus(status);
+                eqp.setBrand(brand);
+                eqp.setYear(year);
                         
             }
+            
             return eqp;
 
         } catch (Exception e) {
             JOptionPane.showMessageDialog(null, e);
             return null;
         } finally {
-            conn.disconnect();
+            try {
+                connection.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex);
+            }
         }
     }
 
     @Override
-    public ArrayList<Equipment> searchByClassroom(int classroomId) {
+    public ArrayList<EquipmentBBDD> searchByClassroom(int classroomId) {
         try {
 
             String query = "SELECT eqp_id, eqp_name, status, brand, year"
                     + " FROM EQUIPMENT WHERE classroom_id = ?";
-            PreparedStatement ps = conn.connect().prepareStatement(query);
+                        connection = conn.getConexion();
+            PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, classroomId);
 
             ResultSet rs = ps.executeQuery();
 
-            ArrayList<Equipment> equipments = new ArrayList<Equipment>;
+            ArrayList<EquipmentBBDD> equipments = new ArrayList<>();
             while (rs.next()) {
                 int eqpId = rs.getInt("EQP_ID");
                 String eqpName = rs.getString("EQP_NAME");
                 String status = rs.getString("STATUS");
                 String brand = rs.getString("BRAND");
                 String year = rs.getString("YEAR");
-                equipments = new Equipment();
+                EquipmentBBDD eqp = new EquipmentBBDD();
+                eqp.setEqp_id(eqpId);
+                eqp.setEqp_name(eqpName);
+                eqp.setStatus(status);
+                eqp.setBrand(brand);
+                eqp.setYear(year);
                 equipments.add(eqp);
                         
             }
@@ -79,7 +104,11 @@ public class TeacherBBDD implements TeacherDAO {
             JOptionPane.showMessageDialog(null, e);
             return null;
         } finally {
-            conn.disconnect();
+            try {
+                connection.close();
+            } catch (SQLException ex) {
+                JOptionPane.showMessageDialog(null, ex);
+            }
         }
     }
 
