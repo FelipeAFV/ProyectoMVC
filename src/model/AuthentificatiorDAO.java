@@ -11,10 +11,10 @@ import java.sql.*;
  *
  * @author samuel
  */
-public class AuthentificatiorDAO extends Conection {
+public class AuthentificatiorDAO extends Conexion {
     public boolean authentic(UserDTO user){
         try{
-          this.conectarse();  
+          this.getConexion();  
           String username = user.getUser_name();
           String pass = user.getPassword();
           PreparedStatement pr = getConexion().prepareStatement("Select * from userp WHERE USER_NAME = ? and PASSWORD = ?");
