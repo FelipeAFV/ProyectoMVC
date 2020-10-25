@@ -37,7 +37,6 @@ public class AuthentificatiorDAO extends Conexion {
         }catch(SQLException e){
             return false;
         }
-        
-        
+         
     }
 }
