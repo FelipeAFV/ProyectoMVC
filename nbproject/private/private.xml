@@ -2,19 +2,6 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
-        <group>
-<<<<<<< HEAD
-            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/model/AdminBBDD.java</file>
-            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/model/TeacherBBDD.java</file>
-            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/view/TeacherView.java</file>
-            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/view/Vista_login.java</file>
-=======
-            <file>file:/C:/Users/f_fig/Documents/NetBeansProjects/TrabajoMVC/src/app/Main.java</file>
-            <file>file:/C:/Users/f_fig/Documents/NetBeansProjects/TrabajoMVC/src/model/Conexion.java</file>
-            <file>file:/C:/Users/f_fig/Documents/NetBeansProjects/TrabajoMVC/src/view/TeacherView.java</file>
-            <file>file:/C:/Users/f_fig/Documents/NetBeansProjects/TrabajoMVC/src/controller/TeacherControl.java</file>
-            <file>file:/C:/Users/f_fig/Documents/NetBeansProjects/TrabajoMVC/src/model/TeacherBBDD.java</file>
->>>>>>> e088f959c911694f5e00fe309c4615e6da2f6767
-        </group>
+        <group/>
     </open-files>
 </project-private>
