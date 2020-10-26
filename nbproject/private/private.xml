@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/C:/Users/f_fig/Documents/NetBeansProjects/TrabajoMVC/src/model/EncargadoDAOImpl.java</file>
             <file>file:/C:/Users/f_fig/Documents/NetBeansProjects/TrabajoMVC/src/model/AdminBBDD.java</file>
@@ -12,5 +13,27 @@
             <file>file:/C:/Users/f_fig/Documents/NetBeansProjects/TrabajoMVC/src/controller/AdminControl.java</file>
             <file>file:/C:/Users/f_fig/Documents/NetBeansProjects/TrabajoMVC/src/model/TeacherBBDD.java</file>
         </group>
+=======
+<<<<<<< HEAD
+        <group>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/model/AdminBBDD.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/model/AuthentificatiorDAO.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/model/UserDTO.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/controller/TeacherControl.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/model/TeacherBBDD.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/app/Main.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/view/TeacherView.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/model/TeacherDAO.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/model/EncargadoDAOImpl.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/controller/Controlador_login.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/view/Vista_login.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/view/AdminView.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/model/Conexion.java</file>
+            <file>file:/C:/Users/samuel/Documents/NetBeansProjects/ProyectoMVC/src/model/EncargadoDAO.java</file>
+        </group>
+=======
+        <group/>
+>>>>>>> 397dab4bfe843e6b99785122c33217cdbea77901
+>>>>>>> 9b78238e45b8d66a46b20a6d506325945c1cf7ce
     </open-files>
 </project-private>
