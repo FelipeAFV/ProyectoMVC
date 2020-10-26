@@ -1,30 +1,36 @@
-
 package model;
 
 import java.sql.PreparedStatement;
-import Interfaces.EncargadoDAO;
+import java.util.ArrayList;
 
-public class EncargadoDAOImpl extends Conexion implements EncargadoDAO{
-    
+public class EncargadoDAOImpl extends Conexion implements EncargadoDAO {
 
     @Override
-    public void registrarEquipment(EquipmentBBDD equip) throws Exception {
+    public void insertEquipment(EquipmentBBDD equip) throws Exception {
         try {
             this.getConexion();
             PreparedStatement ps = this.con.prepareStatement("INSERT INTO Equipment(eqp_id) VALUES(?)");
-            //terminar registro
-        } catch(Exception e) {
+            ps.setString(1, equip.getEqp_name());
+            ps.executeUpdate();
+        } catch (Exception e) {
             throw e;
-        }finally {
-            
+        } finally {
+
         }
+    }
+
+    @Override
+    public void updateEquipment(EquipmentBBDD equip) throws Exception {
         
     }
 
     @Override
-    public Object listar() throws Exception {
-        //terminar 
+    public void deleteEquipment(EquipmentBBDD equip) throws Exception {
+        
     }
-    
-    
+
+    @Override
+    public ArrayList<EquipmentBBDD> listar() throws Exception {
+        //aaaa
+    }
 }
