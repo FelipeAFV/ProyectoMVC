@@ -10,5 +10,13 @@ package model;
  * @author f_fig
  */
 public interface AdminDAO {
-    
+
+    public boolean insert(UserDTO user);
+
+    public UserDTO delete(int userId);
+
+    public boolean update(UserDTO user);
+
+    public UserDTO select(int userId);
+
 }

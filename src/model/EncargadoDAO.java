@@ -1,11 +1,13 @@
 
-package Interfaces;
+package model;
 
-import Controlador.EquipmentBBDD;
-import java.awt.List;
+import model.EquipmentBBDD;
+import java.util.ArrayList;
 
 public interface EncargadoDAO {
-    public void registrarEquipment(EquipmentBBDD equip) throws Exception;
-    public List<EquipmentBBDD> listar()throws Exception;
+    public boolean insertEquipment(EquipmentBBDD equip);
+    public boolean updateEquipment(EquipmentBBDD equip);
+    public boolean deleteEquipment(EquipmentBBDD equip);
+    public ArrayList<EquipmentBBDD> listar();
     
 }

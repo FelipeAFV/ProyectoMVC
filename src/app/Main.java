@@ -5,9 +5,7 @@
  */
 package app;
 
-import controller.TeacherControl;
-import model.TeacherBBDD;
-import view.TeacherView;
+
 
 /**
  *
@@ -16,11 +14,7 @@ import view.TeacherView;
 public class Main {
 
     public static void main(String[] args) {
-        TeacherView tv = new TeacherView();
-        TeacherBBDD tb = new TeacherBBDD();
-        TeacherControl teachC = new TeacherControl(tv, tb);
-        teachC.begin();
-
+        
       
     }
 }

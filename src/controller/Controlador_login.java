@@ -5,13 +5,19 @@
  */
 package controller;
 
-import Model.AuthentificatiorDAO;
-import Model.UserDTO;
-import Views.Prueba;
-import Views.Vista_login;
+import model.AuthentificatiorDAO;
+import model.UserDTO;
+
+import view.Vista_login;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JOptionPane;
+import model.AdminBBDD;
+import model.EncargadoDAOImpl;
+import model.TeacherBBDD;
+import view.AdminView;
+import view.TeacherView;
+import view.Vista_encargado;
 
 /**
  *
@@ -21,13 +27,12 @@ public class Controlador_login implements ActionListener {
     private Vista_login view;
     private UserDTO user;
     private AuthentificatiorDAO aut;
-    private Prueba view2;
     
-    public Controlador_login(Vista_login view,UserDTO user,AuthentificatiorDAO aut,Prueba view2){
+    
+    public Controlador_login(Vista_login view,UserDTO user,AuthentificatiorDAO aut){
         this.view = view;
         this.user = user;
         this.aut = aut;
-        this.view2 = view2;
         this.view.boton_login.addActionListener(this);
     }
 
@@ -36,8 +41,25 @@ public class Controlador_login implements ActionListener {
         user.setUser_name(view.texto_username.getText());
         user.setPassword(String.valueOf(view.texto_password.getPassword()));
         if(aut.authentic(user)){
-            view2.setVisible(true);
-            view.setVisible(false);
+            if(user.getJob_title().equals("Teacher")){
+                TeacherView vistateach = new TeacherView();
+                TeacherBBDD teach = new TeacherBBDD();
+                TeacherControl controlteach = new TeacherControl(vistateach, teach);
+                this.view.setVisible(false);
+                controlteach.begin();
+            }else if(user.getJob_title().equals("Admin")){
+                AdminView vistaadm = new AdminView();
+                AdminBBDD admin = new AdminBBDD();
+                AdminControl controladmin = new AdminControl(vistaadm, admin);
+                this.view.setVisible(false);
+                controladmin.begin();
+            }else if(user.getJob_title().equals("Encargado")){
+                Vista_encargado vistaenc = new Vista_encargado();
+                EncargadoDAOImpl enc = new EncargadoDAOImpl();
+                ControladorEncargado controladorenc = new ControladorEncargado(vistaenc,enc);
+                this.view.setVisible(false);
+                controladorenc.begin();
+            }
         }else{
             JOptionPane.showMessageDialog(null, "user not found");
         }
@@ -47,9 +69,7 @@ public class Controlador_login implements ActionListener {
         this.view.setLocationRelativeTo(null);
         view.setTitle("LOGN_SCREEN");
         this.view.setVisible(true);
-        this.view2.setLocationRelativeTo(null);
-        view2.setTitle("EXITO");
-        this.view2.setVisible(false);
+
         
     }
     

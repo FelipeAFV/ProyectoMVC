@@ -50,6 +50,5 @@ public class UserDTO {
     public void setJob_title(String job_title) {
         this.job_title = job_title;
     }
-    
-    
+     
 }
