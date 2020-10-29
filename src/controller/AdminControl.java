@@ -30,6 +30,13 @@ public class AdminControl implements ActionListener {
         adminView.jButton4.addActionListener(this);
     }
 
+    public void begin() {
+        adminView.setTitle("Sistema Admin");
+        adminView.setLocationRelativeTo(null);
+        adminView.setVisible(true);
+
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getSource().equals(adminView.jButton4)) {

@@ -33,6 +33,13 @@ public class ControladorEncargado implements ActionListener {
         view.btnEliminar.addActionListener(this);
         view.btnMostrar.addActionListener(this);
     }
+    
+    public void begin() {
+        view.setTitle("Sistema Encargado");
+        view.setLocationRelativeTo(null);
+        view.setVisible(true);
+        
+    }
 
     public DefaultTableModel createDataDisplay(ArrayList<EquipmentBBDD> data) {
         String[] columNames = {"ID","ID Sala", "Nombre", "Marca", "Estado", "Año"};
