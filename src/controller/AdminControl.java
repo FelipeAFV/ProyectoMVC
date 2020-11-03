@@ -67,6 +67,7 @@ public class AdminControl implements ActionListener {
             user.setUser_name(userName);
             user.setPassword(password);
             user.setJob_title(jobTitle);
+            System.out.println(jobTitle);
             if (adminDao.insert(user)) {
                 JOptionPane.showMessageDialog(null, "Usuario ingresado con exito");
             }
@@ -94,6 +95,7 @@ public class AdminControl implements ActionListener {
             String userName = adminView.jTextField1.getText();
             String password = adminView.jTextField2.getText();
             String jobTitle = (String) adminView.jComboBox2.getSelectedItem();
+            
 
             UserDTO user = new UserDTO();
             user.setUser_id(id);

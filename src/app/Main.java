@@ -5,6 +5,11 @@
  */
 package app;
 
+import controller.Controlador_login;
+import model.AuthentificatiorDAO;
+import model.UserDTO;
+import view.Vista_login;
+
 
 
 /**
@@ -15,6 +20,8 @@ public class Main {
 
     public static void main(String[] args) {
         
+        Controlador_login control = new Controlador_login(new Vista_login(), new UserDTO(), new AuthentificatiorDAO());
+        control.init();
       
     }
 }

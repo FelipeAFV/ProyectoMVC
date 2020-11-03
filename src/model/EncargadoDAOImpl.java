@@ -17,11 +17,11 @@ public class EncargadoDAOImpl extends Conexion implements EncargadoDAO {
             this.getConexion();
             PreparedStatement ps = this.con.prepareStatement("INSERT INTO Equipment VALUES(?,?,?,?,?,?)");
             ps.setInt(1, equip.getEqp_id());
-            ps.setInt(2, equip.getClassroom_id());
-            ps.setString(3, equip.getEqp_name());
-            ps.setString(4, equip.getStatus());
-            ps.setString(5, equip.getBrand());
-            ps.setString(6, equip.getYear());
+            ps.setString(2, equip.getEqp_name());
+            ps.setString(3, equip.getStatus());
+            ps.setString(4, equip.getBrand());
+            ps.setString(5, equip.getYear());
+            ps.setInt(6, equip.getClassroom_id());
             ps.executeUpdate();
             return true;
         } catch (Exception e) {

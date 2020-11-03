@@ -100,7 +100,7 @@ public class ControladorEncargado implements ActionListener {
             equip.setEqp_name(nombre);
             equip.setYear(year);
             if(encargadoDAO.insertEquipment(equip)) {
-                JOptionPane.showMessageDialog(null, "Usuario ingresado con exito");
+                JOptionPane.showMessageDialog(null, "Equipo ingresado con exito");
             }
 
         } else if (e.getSource().equals(view.btnEliminar)) {
@@ -115,7 +115,7 @@ public class ControladorEncargado implements ActionListener {
             equip.setEqp_id(id);
             boolean resultado = encargadoDAO.deleteEquipment(equip);
             if (resultado) {
-                JOptionPane.showMessageDialog(null, "Usuario eliminado con éxito");
+                JOptionPane.showMessageDialog(null, "Equipo eliminado con éxito");
             } 
 
         } else if (e.getSource().equals(view.btnModificar)) {
@@ -139,7 +139,7 @@ public class ControladorEncargado implements ActionListener {
             equip.setYear(year);
 
             if (encargadoDAO.updateEquipment(equip)) {
-                JOptionPane.showMessageDialog(null, "Usuario modificado");
+                JOptionPane.showMessageDialog(null, "Equipo modificado");
             }
         }
     }

@@ -50,5 +50,12 @@ public class UserDTO {
     public void setJob_title(String job_title) {
         this.job_title = job_title;
     }
+
+    @Override
+    public String toString() {
+        return "UserDTO{" + "user_id=" + user_id + ", user_name=" + user_name + ", \npassword=" + password + ", job_title=" + job_title + '}';
+    }
+    
+    
      
 }

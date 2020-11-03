@@ -25,21 +25,20 @@ public class AdminBBDD implements AdminDAO {
 
         try {
 
-            String query = "INSERT INTO CLIENTS client_id, client_name, password, job_title"
-                    + " VALUES(?,?,?,?)";
+            String query = "INSERT INTO CLIENTS(client_id, client_name, password, job_title) VALUES(?,?,?,?)";
             connection = conn.getConexion();
             PreparedStatement ps = connection.prepareStatement(query);
 
             ps.setInt(1, user.getUser_id());
             ps.setString(2, user.getUser_name());
-            ps.setString(2, user.getPassword());
-            ps.setString(2, user.getJob_title());
+            ps.setString(3, user.getPassword());
+            ps.setString(4, user.getJob_title());
 
             ps.executeUpdate();
             return true;
 
         } catch (SQLException ex) {
-            JOptionPane.showMessageDialog(null, "No se pudo ingresar el Usuario: " + user.getUser_name());
+            JOptionPane.showMessageDialog(null, "No se pudo ingresar el Usuario: " + user.getUser_name()+" \n"+ ex);
             return false;
         } finally {
             try {
@@ -84,8 +83,7 @@ public class AdminBBDD implements AdminDAO {
     public boolean update(UserDTO user) {
 
         try {
-            String query = "UPDATE CLIENTS SET client_name = '?' ,"
-                    + "password = '?', job_title = '?' WHERE client_id = ? ";
+            String query = "UPDATE CLIENTS SET client_name = ? , password = ?, job_title = ? WHERE client_id = ? ";
             connection = conn.getConexion();
             PreparedStatement ps = connection.prepareStatement(query);
 
@@ -115,7 +113,7 @@ public class AdminBBDD implements AdminDAO {
     public UserDTO select(int userId) {
         try {
             UserDTO user = null;
-            String query = "SELECT FROM CLIENTS WHERE client_id = ? ";
+            String query = "SELECT * FROM CLIENTS WHERE client_id = ?";
             connection = conn.getConexion();
             PreparedStatement ps = connection.prepareStatement(query);
             ps.setInt(1, userId);
@@ -124,7 +122,7 @@ public class AdminBBDD implements AdminDAO {
             if (rs.next()) {
                 user = new UserDTO();
                 user.setUser_id(rs.getInt("client_id"));
-                user.setUser_name(rs.getString("client name"));
+                user.setUser_name(rs.getString("client_name"));
                 user.setPassword(rs.getString("password"));
                 user.setJob_title(rs.getString("job_title"));
             }
